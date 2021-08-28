@@ -10,6 +10,8 @@ Alkemy-heroes-app es un proyecto creado en react, una aplicación que te permite
 
 -_NPM INSTALL_
 
+-_NPM START_
+
 ## Construido con 🛠️
 
 * [REACT JS] - Framework.
