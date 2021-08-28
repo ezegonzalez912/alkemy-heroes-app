@@ -4,11 +4,11 @@ Alkemy-heroes-app es un proyecto creado en react, una aplicación que te permite
 
 ## Instalación 🔧
 
-_GIT CLONE https://github.com/ezegonzalez912/alkemy-heroes-app_
+-_GIT CLONE https://github.com/ezegonzalez912/alkemy-heroes-app_
 
-_CD /PATH_
+-_CD /PATH_
 
-_NPM INSTALL_
+-_NPM INSTALL_
 
 ## Construido con 🛠️
 
