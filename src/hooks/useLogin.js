@@ -10,18 +10,25 @@ export const useLogin = () => {
     const [error, setError] = useState(false)
 
     const handleLogin = (data) => {
-        userLogin(data)
-        .then( response => {
-            setError(false)
-            const { token } = response.data;
-            dispatch({
-                type: types.login,
-                payload: token
+        setError(false)
+        const res = new Promise((resolve) => {
+            userLogin(data)
+            .then( response => {
+                setError(false)
+                const { token } = response.data;
+                dispatch({
+                    type: types.login,
+                    payload: token
+                })
+                return resolve("ok")
+            })
+            .catch( () => {
+                setError(true)
+                return resolve("ok")  
             })
         })
-        .catch( () => {
-            setError(true)   
-        })
+
+        return res;
     }
 
     const handleLogout = () => {

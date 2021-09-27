@@ -6,7 +6,6 @@ import { types } from '../../types/types';
 export const HeroCard = ({hero}) => {
 
     const { myTeam, dispatch } = useContext(HeroesContext);
-
     const {setHero, isChangeModal} = useContext(ModalContext)
 
     const moreStats = () => {

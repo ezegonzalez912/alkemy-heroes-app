@@ -10,7 +10,7 @@ export const AuthProvider = ({children}) => {
     useEffect(() => {
         localStorage.setItem("user-hero_app", JSON.stringify(user))
     }, [user])
-
+    
     return (
         <AuthContext.Provider value={{user, dispatch}}>
             {children}

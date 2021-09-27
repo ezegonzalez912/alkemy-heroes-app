@@ -69,6 +69,13 @@
     font-size: 11px;
 }
 
+.msg-prod{
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 300;
+    color: rgba(204, 84, 84, 0.719);
+}
+
 @media (max-width: 400px) {
     .login_box-container{
         width: 100%;

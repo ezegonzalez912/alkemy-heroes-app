@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export const LoginScreen = () => {
 
+    const { handleLogin, error } = useLogin()
+
     const validateFields = (values) => {
         const errors = {}
         if(!values.email){
@@ -15,11 +17,10 @@ export const LoginScreen = () => {
         return errors
     }
 
-    const handleSubmit = (values) => {
+    const handleSubmit = (values, {setSubmitting}) => {
         handleLogin(values)
+        .then(() => setSubmitting(false))
     }
-
-    const { handleLogin, error } = useLogin()
 
     return (
         <div className="login_screen">
@@ -35,7 +36,7 @@ export const LoginScreen = () => {
                         onSubmit={handleSubmit}
                         validate={validateFields}
                     >
-                        {(formik) => (
+                        {({isSubmitting}) => (
                             <Form className="login_form">
                                 <div className="login_form-fm">
                                     <Field className="login_form-field" placeholder="Your email" type="email" name="email"/>
@@ -45,7 +46,7 @@ export const LoginScreen = () => {
                                     <Field className="login_form-field" placeholder="Your password" type="password" name="password"/>
                                     <ErrorMessage className="login_form-msg" name="password" component="p"/>
                                 </div>
-                                <button className="btn-primary login_form-btn" type="submit" disabled={!formik.isValid}> Login </button>
+                                <button className="btn-primary login_form-btn" type="submit" disabled={isSubmitting}> Login </button>
                             </Form>
                         )}
                     </Formik>

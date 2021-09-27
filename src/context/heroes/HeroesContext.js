@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
-import { heroesReducer, initialHeroes } from "./heroesReducer";
+import { heroesReducer } from "./heroesReducer";
+import { initialHeroes } from "./initHeroes";
 
 export const HeroesContext = createContext();
 

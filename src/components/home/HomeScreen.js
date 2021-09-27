@@ -1,6 +1,6 @@
 import React from 'react'
-import { MyTeam } from './MyTeam'
-import { StatsTeam } from './StatsTeam'
+import { MyTeam } from './myTeam/MyTeam'
+import { StatsTeam } from './statsTeam/StatsTeam'
 
 export const HomeScreen = () => {
     

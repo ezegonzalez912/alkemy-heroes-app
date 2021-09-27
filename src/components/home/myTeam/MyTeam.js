@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { HeroesContext } from '../../context/heroes/HeroesContext';
+import { HeroesContext } from '../../../context/heroes/HeroesContext';
 import { AddHeroCard } from './AddHeroCard';
 import { HeroCard } from './HeroCard';
 

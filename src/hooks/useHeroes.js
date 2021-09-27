@@ -8,14 +8,20 @@ export const useHeroes = () => {
 
     const getHeroesByName = (name) => {
         setLoad(true)
-        heroesByName(name)
-        .then(response => {
-            setHeroes(response.data.results)
-            setLoad(false)
+        const res = new Promise((resolve) => {
+            heroesByName(name)
+            .then(response => {
+                setHeroes(response.data.results)
+                setLoad(false)
+                return resolve("ok")
+            })
+            .catch( () => {
+                setLoad(false)
+                return resolve("ok")
+            })
         })
-        .catch( () => {
-            setLoad(false)
-        })
+
+        return res
     }
 
     return {heroes, getHeroesByName, load}
